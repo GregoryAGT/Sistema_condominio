@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h5 class="modal-title">Datos visita</h5>    
+</div>
+    <div class="modal-body">
+        <form [formGroup]="addVisit">
+            <div class="mb-3">
+             <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
+              <input type="text" 
+                     class="form-control" 
+                     formControlName="fullName">
+            </div>
+             <div class="mb-3">
+             <label for="exampleInputPassword1" class="form-label">Departamento</label>
+             <input type="number" 
+                    class="form-control" 
+                    formControlName="dpto">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Fecha</label>
+                <input [attr.disabled]="true"
+                       type="date" 
+                       class="form-control" 
+                       formControlName="fecha"
+                       [placeholder]="currentDate | date:'yyyy-MM-dd'"
+                       [value]="currentDate | date:'yyyy-MM-dd'">
+               </div>                      
+             <div class="modal-footer">
+             <button type="button" class="btn btn-primary" [disabled]="addVisit.invalid" data-bs-dismiss="modal" (click)="save()">Aceptar</button>
+             <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Cancelar</button>
+    </div>
+         </form>
+</div>
+
+
+
+ 
